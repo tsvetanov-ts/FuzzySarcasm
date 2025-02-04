@@ -14,12 +14,14 @@ The output for a given comment includes:
 
 ## File Structure
 ```bash
-{project_root}/ 
+FuzzySarcasm/ 
 ├── README.md
 ├── requirements.txt
 ├── data/
 │   ├── train.csv      # Training data (columns: comment, label)
 │   └── test.csv       # Test data (columns: comment, label)
+├── docs/
+│   └── project_documentation.pdf  # Project documentation
 ├── notebooks/
 │   └── demo.ipynb     # Notebook demonstrating training, fuzzy classification, and visualization
 └── src/
@@ -58,6 +60,7 @@ The output for a given comment includes:
    Highly Likely: 0.00
 
    ```
-## Documentation
+## Project Documentation File
+Can be found in `docs/project_documentation.pdf`
 
 
