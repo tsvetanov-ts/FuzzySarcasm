@@ -34,12 +34,10 @@ FuzzySarcasm/
 ## Setup and Running
 
 1. **Install dependencies:**  
-   From the project root run:
    ```bash
    pip install -r requirements.txt
    ```
 2. **Train the classifier:**  
-   From the project root run:
    ```bash
    python -m src.sarcasm_classifier
    ```
@@ -48,7 +46,7 @@ FuzzySarcasm/
     ```bash
     jupyter notebook notebooks/demo.ipynb
     ```
-4. For testing/optionally run the model with your own message from the command line:
+4. For testing/optionally you can run the model with your own message from the command line:
    ```bash
    python run_model.py "What a great day!" 
    
