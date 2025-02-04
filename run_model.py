@@ -21,7 +21,7 @@ def main():
 
     # Predict the sarcasm using fuzzy classification
     result = sarcasm_clf.classify_fuzzy([args.comment])[0]
-
+    # print(result['sarcasm_probability'])
     # Print the result
     print(f"Input Comment: {args.comment}")
     print(f"Sarcasm Probability: {result['sarcasm_probability']:.2f}")

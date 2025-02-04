@@ -22,10 +22,10 @@ class SarcasmClassifier:
     def train(self, texts, labels):
         """
         Train the sarcasm classifier.
-        A comment is considered sarcastic if its label is 'sarcasm'.
+        A comment is considered sarcastic if its label is 'sarcasm' or 'figurative' (both sarcasm and irony).
         """
         # Convert labels to binary: 1 if sarcasm, else 0
-        y = np.array([1 if label.lower() == 'sarcasm' else 0 for label in labels])
+        y = np.array([1 if label.lower() == 'sarcasm' or label.lower() == 'figurative' else 0 for label in labels])
         X = self.vectorizer.fit_transform(texts)
         self.classifier.fit(X, y)
 
