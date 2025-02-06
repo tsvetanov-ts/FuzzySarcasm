@@ -3,6 +3,7 @@ import pickle
 import skfuzzy as fuzz
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 
 
 class SarcasmClassifier:
@@ -10,7 +11,10 @@ class SarcasmClassifier:
         # Initialize vectorizer and binary classifier
         self.vectorizer = TfidfVectorizer(max_features=5000, stop_words='english')
         self.classifier = LogisticRegression(solver='liblinear')
-
+        # todo try various classifiers (RandomForest, SVM, neural network etc.)     todo #
+        # todo and compare the  results on data (f1, precision, recall, accuracy)   todo #
+        # todo then choose the best one     todo #                                  todo #
+        # self.classifier = RandomForestClassifier(n_estimators=100)
         # Define an x-range for sarcasm probability (from 0 to 1)
         self.x_sarcasm = np.linspace(0, 1, 100)
 
@@ -25,7 +29,7 @@ class SarcasmClassifier:
         A comment is considered sarcastic if its label is 'sarcasm' or 'figurative' (both sarcasm and irony).
         """
         # Convert labels to binary: 1 if sarcasm, else 0
-        y = np.array([1 if label.lower() == 'sarcasm' or label.lower() == 'figurative' else 0 for label in labels])
+        y = np.array([1 if label == 'sarcasm' else 0 for label in labels])
         X = self.vectorizer.fit_transform(texts)
         self.classifier.fit(X, y)
 

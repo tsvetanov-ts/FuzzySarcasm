@@ -7,8 +7,8 @@ import os
 #
 # Both these files contain 2 columns:
 #
-# tweet: The text of the tweet
-# class: The respective class to which the tweet belongs. There are 4 classes -:
+# comment: The text of the tweet
+# label: The respective class to which the tweet belongs. There are 4 classes -:
 #
 # Irony
 # Sarcasm
